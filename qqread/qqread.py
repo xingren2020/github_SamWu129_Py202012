@@ -24,7 +24,7 @@ def user_name():
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/user/init',headers=headers,timeout=10)
-      
+      print(response.text)
       userRes=json.loads(response.text)
       if(userRes['code']==0):
          msg+=f'''{userRes['data']['user']['nickName']}'''
@@ -50,12 +50,13 @@ def user_coin():
       msg+=str(e)
       print(msg)
    loger(msg)
+   
 def user_readtime():
    msg='【readtime】'
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/me/query/page',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
       userRes=json.loads(response.text)
       if(userRes['code']==0):
          msg+=f'''💰{userRes['data']['readTime']}  min  【Readmoney】{userRes['data']['balance']['allBalance']}bean'''
@@ -71,7 +72,7 @@ def watch_video():
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/watch_video',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
@@ -81,29 +82,32 @@ def treasure_box():
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def treasure_box_video():
    msg='treasure_box_video'
    time.sleep(31)
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box_video',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def clock_in():
    msg='clock_in'
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/clock_in/page',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def clock_in_video():
    msg='clock_in_video'
    print('\n💎'+msg)
@@ -111,14 +115,15 @@ def clock_in_video():
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/clock_in_video',headers=headers,timeout=10)
       print(response.text)
    except Exception as e:
-      #msg+=str(e)
+      msg+=str(e)
       print(msg)
+      
 def read_red_day():
    msg='read_red_day'
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/red_packet/user/read_book',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
@@ -128,7 +133,7 @@ def read_time(long):
    print('\n💎'+msg)
    try:
       response=requests.get(f'''https://mqqapi.reader.qq.com/mqq/red_packet/user/read_time?seconds={long}''',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
@@ -142,15 +147,17 @@ def read_time_reward(long):
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def read_time_long():
    msg='read_time_long'
    print('\n💎'+msg)
    try:
       response=requests.get('https://mqqapi.reader.qq.com/mqq/addReadTimeWithBid?scene=1008&refer=pages%2Fbook-shelf%2Findex&bid=27693007&readTime=188447&read_type=0&conttype=1&read_status=0&chapter_info=%5B%7B%222%22%3A%7B%22readTime%22%3A188447%2C%22pay_status%22%3A0%7D%7D%5D&sp=-1',headers=headers,timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def readtimecheck():
    msg='readtimecheck\n'
    print('\n💎'+msg)
@@ -179,10 +186,11 @@ def sign_in():
    print('\n💎'+msg)
    try:
       response=requests.post('https://mqqapi.reader.qq.com/mqq/sign_in/user',headers=headers,data={},timeout=10)
-      #print(response.text)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
+      
 def clock(func):
     def clocked(*args, **kwargs):
         t0 = timeit.default_timer()
@@ -260,7 +268,7 @@ def pushmsg(title,txt,bflag=1,wflag=1):
       print("\n【通知汇总】")
       purl = f'''https://api.day.app/{djj_bark_cookie}/{title}/{txt}'''
       response = requests.post(purl)
-      #print(response.text)
+      print(response.text)
    if wflag==1 and djj_sever_jiang.strip():
       print("\n【微信消息】")
       purl = f'''http://sc.ftqq.com/{djj_sever_jiang}.send'''
@@ -269,9 +277,9 @@ def pushmsg(title,txt,bflag=1,wflag=1):
     }
       body=f'''text={txt})&desp={title}'''
       response = requests.post(purl,headers=headers,data=body)
-    #print(response.text)
+      print(response.text)
 def loger(m):
-   #print(m)
+   print(m)
    global result
    result +=m
 @clock
