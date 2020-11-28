@@ -76,6 +76,7 @@ def watch_video():
    except Exception as e:
       msg+=str(e)
       print(msg)
+   loger(msg)
       
 def treasure_box():
    msg='treasure_box'
@@ -86,6 +87,7 @@ def treasure_box():
    except Exception as e:
       msg+=str(e)
       print(msg)
+   loger(msg)
       
 def treasure_box_video():
    msg='treasure_box_video'
@@ -97,6 +99,7 @@ def treasure_box_video():
    except Exception as e:
       msg+=str(e)
       print(msg)
+   loger(msg)
       
 def clock_in():
    msg='clock_in'
@@ -107,7 +110,8 @@ def clock_in():
    except Exception as e:
       msg+=str(e)
       print(msg)
-      
+   loger(msg)
+   
 def clock_in_video():
    msg='clock_in_video'
    print('\n💎'+msg)
@@ -117,6 +121,7 @@ def clock_in_video():
    except Exception as e:
       msg+=str(e)
       print(msg)
+   loger(msg)
       
 def read_red_day():
    msg='read_red_day'
@@ -127,7 +132,8 @@ def read_red_day():
    except Exception as e:
       msg+=str(e)
       print(msg)
-
+   loger(msg)
+   
 def read_time(long):
    msg='read_time'
    print('\n💎'+msg)
@@ -137,7 +143,8 @@ def read_time(long):
    except Exception as e:
       msg+=str(e)
       print(msg)
-      
+   loger(msg)
+   
 def read_time_reward(long):
    msg='read_time_reward'
    print('\n💎'+msg)
@@ -147,7 +154,8 @@ def read_time_reward(long):
    except Exception as e:
       msg+=str(e)
       print(msg)
-      
+   loger(msg)
+   
 def read_time_long():
    msg='read_time_long'
    print('\n💎'+msg)
@@ -157,7 +165,8 @@ def read_time_long():
    except Exception as e:
       msg+=str(e)
       print(msg)
-      
+   loger(msg)
+   
 def readtimecheck():
    msg='readtimecheck\n'
    print('\n💎'+msg)
@@ -179,7 +188,7 @@ def readtimecheck():
    except Exception as e:
       msg+=str(e)
       print(msg)
-
+   loger(msg)
 
 def sign_in():
    msg='sign_in'
@@ -190,7 +199,8 @@ def sign_in():
    except Exception as e:
       msg+=str(e)
       print(msg)
-      
+   loger(msg)
+   
 def clock(func):
     def clocked(*args, **kwargs):
         t0 = timeit.default_timer()
