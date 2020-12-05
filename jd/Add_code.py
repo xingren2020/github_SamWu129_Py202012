@@ -11,7 +11,7 @@ Defalt_ncShareCode= ['535587d2d2134c05b72d532e5648fca4','d8f30abd6b09497b81502e3
 Defalt_mcShareCode= ['MTAxODc2NTEzMTAwMDAwMDAyNjg3ODA3Nw==','MTAxODc2NTEzMTAwMDAwMDAyNzM1OTgyOQ==','MTE1NDAxNzYwMDAwMDAwNDA0NjI0MDk=']#读取参数djj_sharecode为空，开始读取默认参数
 Defalt_zdShareCode= ['2gih437f3cx52vug2oxzjdhkoa','eeexxudqtlampttwqsjgtjinenirfsmkhcanvfq','uwgpfl3hsfqp3onctpv6qufih5slnir6rura7fy']#读取参数djj_sharecode为空，开始读取默认参数
 Defalt_ddShareCode= ['P04z54XCjVWnYaS5mRUVDWmnD1Ll4CY','P04z54XCjVWnYaS5m9cZxqYhAUtywhKqBmvOA','P04z54XCjVWnYaS5m9cZz6DtAs01UPsoL1lIQ']#读取参数djj_sharecode为空，开始读取默认参数
-Defalt_jxShareCode= ['Z-OXyhGaVPX6ImRJwOb_pQ==']#读取参数djj_sharecode为空，开始读取默认参数
+Defalt_jxShareCode= ['Z-OXyhGaVPX6ImRJwOb_pQ==','CIAftU-mPs00k7FnlPTLgg==']#读取参数djj_sharecode为空，开始读取默认参数
 #学习与测试  by 2020.12
 def AddhelpCode(Url,Defalt_ShareCode):
    for code in Defalt_ShareCode:
