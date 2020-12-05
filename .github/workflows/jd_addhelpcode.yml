@@ -3,7 +3,7 @@ name: jd_addhelpcode
 on:
 
   schedule:
-    - cron: '20 10 * * * '
+    - cron: '2 18 * * * '
   watch:
     types: [started]
 jobs:
