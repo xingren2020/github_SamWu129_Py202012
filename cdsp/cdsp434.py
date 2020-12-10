@@ -6,7 +6,6 @@ import os
 import re
 import urllib
 from datetime import datetime
-from dateutil import tz
 
 
 
