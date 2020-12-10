@@ -1,0 +1,28 @@
+name: cdsp434
+
+on:
+  schedule:
+    - cron: '10 1 * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./cdsp/requirements.txt 
+        
+      - name: 'cdsp434' 
+        run: python3 ./cdsp/cdsp434.py 
+        env:
+            cd_body434: ${{ secrets.cd_body434 }}
+            cd_tk: ${{ secrets.cd_tk }}
+            cd_token: ${{ secrets.cd_token }}
