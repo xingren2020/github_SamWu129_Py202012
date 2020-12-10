@@ -26,8 +26,8 @@ def watch_video():
    msg='watch_video'
    print('\n💎'+msg)
    try:
-      response=requests.get('https://api-ddvideo.1sapp.com/h5/task/submit',headers=headers,body=cd_body434,timeout=10)
-      #print(response.text)
+      response=requests.post('https://api-ddvideo.1sapp.com/h5/task/submit',headers=headers,body=cd_body434,timeout=10)
+      print(response.text)
    except Exception as e:
       msg+=str(e)
       print(msg)
@@ -91,7 +91,7 @@ def all():
        result+=f'''【Count】{index}'''
        watch_video()
    if notice('4:00','5:00') or notice('22:00','23:00') or notice('13:00','14:00'):
-      pushmsg('QQread',result)
+      pushmsg('CDSP',result)
    print('its over')
    
    
